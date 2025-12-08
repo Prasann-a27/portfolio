@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasanna Gebise – Portfolio</title>
+  <style>
+    :root{
+      --bg:#0e0e0e; --card:#1a1a1a; --muted:#777; --accent:#00aaff;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: #e0e0e0;
+      line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    header {
+      background: #151515;
+      padding: 26px 20px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+      backdrop-filter: blur(6px);
+    }
+    header h1 { margin: 0; font-size: 2.1rem; letter-spacing:0.4px }
+    header p { margin:6px 0 0; color:var(--muted) }
+
+    .container { padding: 40px 6%; max-width:1200px; margin:0 auto }
+    h2 { color: var(--accent); margin-bottom: 18px }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+    }
+    .project-card {
+      background: linear-gradient(180deg,var(--card), rgba(30,30,30,0.9));
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .project-card h3{ margin:0 0 8px; color:#9fd8ff }
+    .project-thumb{ width:100%; height:160px; object-fit:cover; border-radius:8px; background:var(--glass); border:1px solid #222}
+    .project-meta{ display:flex; gap:10px; align-items:center; margin-top:10px }
+    .project-desc{ color:#cfcfcf; font-size:0.95rem }
+
+    .video-wrap{ margin-top:12px }
+    video{ width:100%; border-radius:8px; background:#000 }
+    .yt-embed{ width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden }
+
+    .resume-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+    .resume-button { padding:10px 16px; background:#0077cc; color:white; text-decoration:none; border-radius:8px }
+    .note { color:var(--muted); font-size:0.9rem }
+
+    footer { text-align:center; padding:28px 10px; color:var(--muted); margin-top:30px }
+
+    @media (max-width:480px){ header h1{font-size:1.4rem} .project-thumb{height:140px} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Prasanna Vardhman Gebise</h1>
+    <p>Contact no. - +91 8149463727 •  Mail ID - prasannagebise35226@gmail.com </p>
+  </header>
+
+  <main class="container">
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>HolAbot – Holonomic Art Robot (eYRC AIR-3)</h3>
+          <img src="assets/images/Holabot_image.jpg" alt="HolAbot image" class="project-thumb">
+          <p class="project-desc">Omni-wheel robot with pen actuation, feedback and controller nodes, and WiFi socket communication system.</p>
+
+          <div class="video-wrap">
+            <!-- Local video file placed in your repo at assets/videos/holabot_demo.mp4 -->
+            <video controls poster="assets/images/Holabot_image.jpg">
+              <source src="assets/videos/Holabot_demo.mp4" type="video/mp4">
+              Your browser does not support the video tag. Provide a YouTube fallback below.
+            </video>
+
+            <!-- YouTube fallback / prefered hosting for large files:
+                 <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe></div>
+            -->
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>ADHIC – Autonomous Disinfectant Holonomic Interactive Cobot</h3>
+          <img src="assets/images/adhic_poster.png" alt="ADHIC poster" class="project-thumb">
+          <p class="project-desc">Holonomic base + URDF-based serial manipulator with UV disinfectant module. SLAM in Gazebo with custom world.</p>
+
+          <div class="video-wrap">
+            <video controls poster="assets/images/adhic_poster.png">
+              <source src="assets/videos/adhic_demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Lunar Scout – Self-Balancing Bike (eYRC AIR-4)</h3>
+          <p class="project-desc">Omni-wheel stabilization, LQR controller, and NRF-based transmitter/receiver architecture.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
+          <p class="project-desc">Sensor integration, real-time force control using SbRIO & LabVIEW, analytical forward kinematics, and tension optimization via QP.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Robotics Software Internship – Drone Firmware & Perception</h3>
+          <p class="project-desc">Implemented KF, FSM, Visual SLAM, SfM reconstruction, feature extraction (ORB/SIFT/SURF) and deployments on Jetson Orin NX & Raspberry Pi 5.</p>
+        </article>
+
+        <!-- Newly added projects from your PPT images -->
+        <article class="project-card">
+          <h3>Hybrid VTOL – Design & Fabrication (e-Yantra 2023)</h3>
+          <img src="assets/images/vtol_poster.png" alt="Hybrid VTOL poster" class="project-thumb">
+          <p class="project-desc">Design and fabrication of a hybrid VTOL platform — structural design, CAD, CFD and flight testing.</p>
+          <div class="video-wrap">
+            <p class="note">Tip: host a demo on YouTube and embed it (recommended for large files).</p>
+            <div class="yt-embed"><!-- Example: replace VIDEO_ID -->
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="width:100%;height:100%"></iframe>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Onboard LQR with VIO for Quadcopters (e-Yantra 2024)</h3>
+          <img src="assets/images/vio_poster.png" alt="VIO poster" class="project-thumb">
+          <p class="project-desc">Implemented onboard Visual Inertial Odometry and LQR controller for non-GPS indoor stabilization and control.</p>
+          <div class="video-wrap">
+            <video controls poster="assets/images/vio_poster.png">
+              <source src="assets/videos/vio_demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="resume" style="margin-top:34px">
+      <h2>Resume</h2>
+      <div class="resume-row">
+        <a href="assets/resume/resume.pdf" class="resume-button" download>Download Resume (PDF)</a>
+        <span class="note">Or place a public copy in the repo and link it here (assets/resume/my_resume.pdf).</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Prasanna Gebise — Hosted on GitHub Pages (no custom domain)
+  </footer>
+</body>
+</html>
