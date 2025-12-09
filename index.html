@@ -33,24 +33,45 @@
 
     .projects-grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap:18px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap:22px;
+      align-items:start; /* ensures cards grow independently */
     }
+
     .project-card {
       background: linear-gradient(180deg,var(--card), rgba(30,30,30,0.9));
       padding: 16px;
       border-radius: 12px;
       border: 1px solid #2a2a2a;
       box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      height: auto; /* each card grows based on content */
     }
-    .project-card h3{ margin:0 0 8px; color:#9fd8ff }
-    .project-thumb{ width:100%; height:160px; object-fit:cover; border-radius:8px; background:var(--glass); border:1px solid #222}
-    .project-meta{ display:flex; gap:10px; align-items:center; margin-top:10px }
-    .project-desc{ color:#cfcfcf; font-size:0.95rem }
+
+    .project-card h3{ margin:0 0 12px; color:#9fd8ff }
+
+    /* IMAGES CAN BE RESIZED HERE */
+    .project-thumb{ 
+      width:100%; 
+      height:auto; /* THIS FIXES YOUR IMAGE CROPPING */
+      max-height:260px; /* optional limit */
+      object-fit:cover; 
+      border-radius:8px; 
+      background:var(--glass); 
+      border:1px solid #222;
+      margin-bottom:10px;
+    }
+
+    .project-desc{ color:#cfcfcf; font-size:0.96rem; margin-bottom:10px }
 
     .video-wrap{ margin-top:12px }
-    video{ width:100%; border-radius:8px; background:#000 }
-    .yt-embed{ width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden }
+
+    .yt-embed{ 
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:10px; 
+      overflow:hidden;
+      border:1px solid #333;
+    }
 
     .resume-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
     .resume-button { padding:10px 16px; background:#0077cc; color:white; text-decoration:none; border-radius:8px }
@@ -58,7 +79,7 @@
 
     footer { text-align:center; padding:28px 10px; color:var(--muted); margin-top:30px }
 
-    @media (max-width:480px){ header h1{font-size:1.4rem} .project-thumb{height:160px} }
+    @media (max-width:480px){ header h1{font-size:1.4rem} }
   </style>
 </head>
 <body>
@@ -72,40 +93,24 @@
       <h2>Projects</h2>
 
       <div class="projects-grid">
+
         <article class="project-card">
           <h3>HolAbot – Holonomic Art Robot (eYRC 2022-23 AIR-3)</h3>
           <img src="assets/images/Holabot_image.jpg" alt="HolAbot image" class="project-thumb">
           <p class="project-desc">Omni-wheel robot with pen actuation, feedback and controller nodes, and WiFi socket communication system.</p>
-
           <div class="video-wrap">
-            <!-- Local video file placed in your repo at assets/videos/holabot_demo.mp4 -->
             <div class="yt-embed">
-              <iframe 
-                  src="https://www.youtube.com/embed/F19YZVfqGnc"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/F19YZVfqGnc" frameborder="0" allowfullscreen></iframe>
             </div>
-            <!-- YouTube fallback / prefered hosting for large files:
-                 <div class="yt-embed"><iframe src="https://youtu.be/F19YZVfqGnc" frameborder="0" allowfullscreen></iframe></div>
-            -->
           </div>
         </article>
 
         <article class="project-card">
           <h3>ADHIC – Autonomous Disinfectant Holonomic Interactive Cobot</h3>
-          <!-- <img src="assets/images/adhic_poster.png" alt="ADHIC poster" class="project-thumb"> -->
-          <p class="project-desc">Holonomic base + URDF-based serial manipulator with UV disinfectant module. SLAM in Gazebo with custom world. Patent Published. </p>
-
+          <p class="project-desc">Holonomic base + URDF-based serial manipulator with UV disinfectant module. SLAM in Gazebo with custom world. Patent Published.</p>
           <div class="video-wrap">
-             <div class="yt-embed">
-              <iframe 
-                  src="https://youtu.be/UEWtuWPV_f8"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/UEWtuWPV_f8" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </article>
@@ -113,16 +118,10 @@
         <article class="project-card">
           <h3>Lunar Scout – Self-Balancing Bike (eYRC 2023-24 AIR-4)</h3>
           <img src="assets/images/Lunarscout.jpg" alt="Lunar scout poster" class="project-thumb">
-
           <p class="project-desc">Omni-wheel stabilization, LQR controller, and NRF-based transmitter-receiver.</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtube.com/shorts/gFfpGj2wt28?feature=share"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/gFfpGj2wt28" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </article>
@@ -131,99 +130,45 @@
           <h3>Hybrid VTOL – Design & Fabrication (e-Yantra Summer Intern 2023)</h3>
           <img src="assets/images/VTOL.jpg" alt="Hybrid VTOL poster" class="project-thumb">
           <p class="project-desc">Design and fabrication of a hybrid VTOL platform — structural design, CAD, CFD, component selection and integration.</p>
-    
         </article>
 
         <article class="project-card">
           <h3>Onboard LQR with VIO for Quadcopters (e-Yantra Summer Intern 2024)</h3>
           <img src="assets/images/EYSIP24_3.jpg" alt="VIO poster" class="project-thumb">
           <p class="project-desc">Implemented onboard Visual Inertial Odometry and LQR controller for non-GPS indoor stabilization and control.</p>
-          <p class="project-desc">VIO (Visual Inertial Odometry) pipeline demo on hardware. </p>
+          <p class="project-desc">VIO (Visual Inertial Odometry) pipeline demo on hardware.</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtu.be/7Ls3g0lJd3Y"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/7Ls3g0lJd3Y" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
-          <p class="project-desc">LQR (Linear quadratic regulator) demo in Gazebo simulation. </p>
+          <p class="project-desc">LQR simulation demo.</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtu.be/yTIX0JBDJCE"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/yTIX0JBDJCE" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </article>
 
         <article class="project-card">
           <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
-          <p class="project-desc">Developed a manipulator testbed for upper limb rehabilitation. Practical contributions include sensor integration, real-time force control of end effector using SbRIO & LabVIEW and theoretical contributions include analytical approach for forward kinematics solution of CDPM and tension optimization via QP.</p>
+          <p class="project-desc">Upper limb rehabilitation testbed: real-time force control (SbRIO + LabVIEW), analytical FK for CDPM, tension optimization via QP.</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtube.com/shorts/EyDwal9ELm8?feature=share"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/EyDwal9ELm8" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </article>
 
         <article class="project-card">
           <h3>Robotics Software Internship (Zebu Intelligent Systems, Hyderabad)</h3>
-          <p class="project-desc">Implemented KF, FSM, Visual SLAM, SfM reconstruction, feature extraction (ORB/SIFT/SURF) and deployments on Jetson Orin NX & Raspberry Pi 5.</p>
-          <p class="project-desc">Demo video of Visual SLAM using ORB-SLAM and stereo camera setup.</p>
-
+          <p class="project-desc">Implemented KF, FSM, Visual SLAM, SfM reconstruction, ORB/SIFT/SURF, deployment on Jetson Orin NX & Raspberry Pi 5.</p>
+          <p class="project-desc">Visual SLAM using ORB-SLAM (stereo).</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtu.be/vFrbPghcAWo"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/vFrbPghcAWo" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
-          <p class="project-desc">Demo video of Drone-in-a-box project.</p>
-
+          <p class="project-desc">Drone-in-a-box demo.</p>
           <div class="video-wrap">
             <div class="yt-embed">
-              <iframe 
-                  src="https://youtu.be/70nkUwAZE_U"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </article>
-
-        
-        
-
-      </div>
-    </section>
-
-    <section id="resume" style="margin-top:34px">
-      <h2>Resume</h2>
-      <div class="resume-row">
-        <a href="assets/resume/resume.pdf" class="resume-button" download>Download Resume (PDF)</a>
-        <span class="note">Or place a public copy in the repo and link it here (assets/resume/my_resume.pdf).</span>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2025 Prasanna Gebise — Hosted on GitHub Pages (no custom domain)
-  </footer>
-</body>
-</html>
