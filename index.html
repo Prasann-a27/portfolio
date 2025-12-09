@@ -58,13 +58,13 @@
 
     footer { text-align:center; padding:28px 10px; color:var(--muted); margin-top:30px }
 
-    @media (max-width:480px){ header h1{font-size:1.4rem} .project-thumb{height:140px} }
+    @media (max-width:480px){ header h1{font-size:1.4rem} .project-thumb{height:160px} }
   </style>
 </head>
 <body>
   <header>
     <h1>Prasanna Vardhman Gebise</h1>
-    <p>Contact no. - +91 8149463727 •  Mail ID - prasannagebise35226@gmail.com </p>
+    <p>Contact:  +91 8149463727 •  Mail ID: prasannagebise35226@gmail.com </p>
   </header>
 
   <main class="container">
@@ -73,73 +73,141 @@
 
       <div class="projects-grid">
         <article class="project-card">
-          <h3>HolAbot – Holonomic Art Robot (eYRC AIR-3)</h3>
+          <h3>HolAbot – Holonomic Art Robot (eYRC 2022-23 AIR-3)</h3>
           <img src="assets/images/Holabot_image.jpg" alt="HolAbot image" class="project-thumb">
           <p class="project-desc">Omni-wheel robot with pen actuation, feedback and controller nodes, and WiFi socket communication system.</p>
 
           <div class="video-wrap">
             <!-- Local video file placed in your repo at assets/videos/holabot_demo.mp4 -->
-            <video controls poster="assets/images/Holabot_image.jpg">
-              <source src="assets/videos/Holabot_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag. Provide a YouTube fallback below.
-            </video>
-
+            <div class="yt-embed">
+              <iframe 
+                  src="https://www.youtube.com/embed/F19YZVfqGnc"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
             <!-- YouTube fallback / prefered hosting for large files:
-                 <div class="yt-embed"><iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe></div>
+                 <div class="yt-embed"><iframe src="https://youtu.be/F19YZVfqGnc" frameborder="0" allowfullscreen></iframe></div>
             -->
           </div>
         </article>
 
         <article class="project-card">
           <h3>ADHIC – Autonomous Disinfectant Holonomic Interactive Cobot</h3>
-          <img src="assets/images/adhic_poster.png" alt="ADHIC poster" class="project-thumb">
-          <p class="project-desc">Holonomic base + URDF-based serial manipulator with UV disinfectant module. SLAM in Gazebo with custom world.</p>
+          <!-- <img src="assets/images/adhic_poster.png" alt="ADHIC poster" class="project-thumb"> -->
+          <p class="project-desc">Holonomic base + URDF-based serial manipulator with UV disinfectant module. SLAM in Gazebo with custom world. Patent Published. </p>
 
           <div class="video-wrap">
-            <video controls poster="assets/images/adhic_poster.png">
-              <source src="assets/videos/adhic_demo.mp4" type="video/mp4">
-            </video>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <h3>Lunar Scout – Self-Balancing Bike (eYRC AIR-4)</h3>
-          <p class="project-desc">Omni-wheel stabilization, LQR controller, and NRF-based transmitter/receiver architecture.</p>
-        </article>
-
-        <article class="project-card">
-          <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
-          <p class="project-desc">Sensor integration, real-time force control using SbRIO & LabVIEW, analytical forward kinematics, and tension optimization via QP.</p>
-        </article>
-
-        <article class="project-card">
-          <h3>Robotics Software Internship – Drone Firmware & Perception</h3>
-          <p class="project-desc">Implemented KF, FSM, Visual SLAM, SfM reconstruction, feature extraction (ORB/SIFT/SURF) and deployments on Jetson Orin NX & Raspberry Pi 5.</p>
-        </article>
-
-        <!-- Newly added projects from your PPT images -->
-        <article class="project-card">
-          <h3>Hybrid VTOL – Design & Fabrication (e-Yantra 2023)</h3>
-          <img src="assets/images/vtol_poster.png" alt="Hybrid VTOL poster" class="project-thumb">
-          <p class="project-desc">Design and fabrication of a hybrid VTOL platform — structural design, CAD, CFD and flight testing.</p>
-          <div class="video-wrap">
-            <p class="note">Tip: host a demo on YouTube and embed it (recommended for large files).</p>
-            <div class="yt-embed"><!-- Example: replace VIDEO_ID -->
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="width:100%;height:100%"></iframe>
+             <div class="yt-embed">
+              <iframe 
+                  src="https://youtu.be/UEWtuWPV_f8"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
             </div>
           </div>
         </article>
 
         <article class="project-card">
-          <h3>Onboard LQR with VIO for Quadcopters (e-Yantra 2024)</h3>
-          <img src="assets/images/vio_poster.png" alt="VIO poster" class="project-thumb">
-          <p class="project-desc">Implemented onboard Visual Inertial Odometry and LQR controller for non-GPS indoor stabilization and control.</p>
+          <h3>Lunar Scout – Self-Balancing Bike (eYRC 2023-24 AIR-4)</h3>
+          <img src="assets/images/Lunarscout.jpg" alt="Lunar scout poster" class="project-thumb">
+
+          <p class="project-desc">Omni-wheel stabilization, LQR controller, and NRF-based transmitter-receiver.</p>
           <div class="video-wrap">
-            <video controls poster="assets/images/vio_poster.png">
-              <source src="assets/videos/vio_demo.mp4" type="video/mp4">
-            </video>
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtube.com/shorts/gFfpGj2wt28?feature=share"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </article>
+
+        <article class="project-card">
+          <h3>Hybrid VTOL – Design & Fabrication (e-Yantra Summer Intern 2023)</h3>
+          <img src="assets/images/VTOL.jpg" alt="Hybrid VTOL poster" class="project-thumb">
+          <p class="project-desc">Design and fabrication of a hybrid VTOL platform — structural design, CAD, CFD, component selection and integration.</p>
+    
+        </article>
+
+        <article class="project-card">
+          <h3>Onboard LQR with VIO for Quadcopters (e-Yantra Summer Intern 2024)</h3>
+          <img src="assets/images/EYSIP24_3.jpg" alt="VIO poster" class="project-thumb">
+          <p class="project-desc">Implemented onboard Visual Inertial Odometry and LQR controller for non-GPS indoor stabilization and control.</p>
+          <p class="project-desc">VIO (Visual Inertial Odometry) pipeline demo on hardware. </p>
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtu.be/7Ls3g0lJd3Y"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          <p class="project-desc">LQR (Linear quadratic regulator) demo in Gazebo simulation. </p>
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtu.be/yTIX0JBDJCE"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
+          <p class="project-desc">Developed a manipulator testbed for upper limb rehabilitation. Practical contributions include sensor integration, real-time force control of end effector using SbRIO & LabVIEW and theoretical contributions include analytical approach for forward kinematics solution of CDPM and tension optimization via QP.</p>
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtube.com/shorts/EyDwal9ELm8?feature=share"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Robotics Software Internship (Zebu Intelligent Systems, Hyderabad)</h3>
+          <p class="project-desc">Implemented KF, FSM, Visual SLAM, SfM reconstruction, feature extraction (ORB/SIFT/SURF) and deployments on Jetson Orin NX & Raspberry Pi 5.</p>
+          <p class="project-desc">Demo video of Visual SLAM using ORB-SLAM and stereo camera setup.</p>
+
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtu.be/vFrbPghcAWo"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          <p class="project-desc">Demo video of Drone-in-a-box project.</p>
+
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe 
+                  src="https://youtu.be/70nkUwAZE_U"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </article>
+
+        
+        
 
       </div>
     </section>
