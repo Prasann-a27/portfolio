@@ -87,6 +87,14 @@
       border: 1px solid #333;
     }
 
+    /* FIX ADDED → ensures videos fill entire space */
+    .yt-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
     .resume-row {
       display: flex;
       gap: 12px;
@@ -127,21 +135,10 @@
         <article class="project-card">
           <h3>HolAbot – Holonomic Art Robot (eYRC 2022–23 AIR-3)</h3>
           <img src="assets/images/Holabot_image.jpg" class="project-thumb">
-          <p class="project-desc">Omni-wheel robot with pen actuation, feedback controller nodes, and WiFi socket control.</p>
+          <p class="project-desc">Omni-wheel robot with pen actuation, camera feedback and controller nodes, communication through WiFi socket.</p>
           <div class="video-wrap">
             <div class="yt-embed">
               <iframe src="https://www.youtube.com/embed/F19YZVfqGnc" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </article>
-
-        <!-- ADHIC -->
-        <article class="project-card">
-          <h3>ADHIC – Autonomous Disinfectant Holonomic Interactive Cobot</h3>
-          <p class="project-desc">Holonomic base + serial manipulator with UV disinfectant module. SLAM in Gazebo. Patent Published.</p>
-          <div class="video-wrap">
-            <div class="yt-embed">
-              <iframe src="https://www.youtube.com/embed/UEWtuWPV_f8" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </article>
@@ -150,7 +147,7 @@
         <article class="project-card">
           <h3>Lunar Scout – Self-Balancing Bike (eYRC 2023–24 AIR-4)</h3>
           <img src="assets/images/Lunarscout.jpg" class="project-thumb">
-          <p class="project-desc">Self-balancing omni-wheel system with LQR controller and NRF transmitter.</p>
+          <p class="project-desc">Self-balancing omni-wheel system with LQR (Linear quadratic regulator) and NRF transmitter.</p>
           <div class="video-wrap">
             <div class="yt-embed">
               <iframe src="https://www.youtube.com/embed/gFfpGj2wt28" frameborder="0" allowfullscreen></iframe>
@@ -158,20 +155,35 @@
           </div>
         </article>
 
-        <!-- Hybrid VTOL -->
+        <!-- ADHIC -->
         <article class="project-card">
-          <h3>Hybrid VTOL – Design & Fabrication (e-Yantra Intern 2023)</h3>
-          <img src="assets/images/VTOL.jpg" class="project-thumb">
-          <p class="project-desc">Hybrid VTOL structural design, aerodynamics, CAD, CFD & component integration.</p>
+          <h3>ADHIC – Autonomous Disinfectant Holonomic Interactive Cobot</h3>
+          <p class="project-desc">Holonomic base holding serial manipulator with UV disinfectant module. SLAM in Gazebo. Patent Published.</p>
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/UEWtuWPV_f8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cable-driven Manipulator -->
+        <article class="project-card">
+          <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
+          <p class="project-desc">For upper limb rehabilitation: force control, sensor integration deployed on Sbrio. Theoretical contributions include analytical Forward Kinematics solution, tension optimization (using QP).</p>
+          <div class="video-wrap">
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/EyDwal9ELm8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
         </article>
 
         <!-- LQR + VIO -->
         <article class="project-card">
-          <h3>Onboard LQR with VIO for Quadcopters (e-Yantra Intern 2024)</h3>
+          <h3>Onboard LQR with VIO for Quadcopters (e-Yantra, IITB Summer Intern 2024)</h3>
           <img src="assets/images/EYSIP24_3.jpg" class="project-thumb">
           <p class="project-desc">Indoor non-GPS stabilization using onboard VIO + LQR controller.</p>
 
-          <p class="project-desc">VIO hardware demo:</p>
+          <p class="project-desc">VIO pipeline integration hardware demo:</p>
           <div class="video-wrap">
             <div class="yt-embed">
               <iframe src="https://www.youtube.com/embed/7Ls3g0lJd3Y" frameborder="0" allowfullscreen></iframe>
@@ -186,23 +198,12 @@
           </div>
         </article>
 
-        <!-- Cable-driven Manipulator -->
-        <article class="project-card">
-          <h3>Cable-Driven Parallel Manipulator Testbed (HCR Lab, IITGN)</h3>
-          <p class="project-desc">Upper-limb rehab system: SbRIO force control, analytical FK, tension optimization (QP).</p>
-          <div class="video-wrap">
-            <div class="yt-embed">
-              <iframe src="https://www.youtube.com/embed/EyDwal9ELm8" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </article>
-
         <!-- Zebu Internship -->
         <article class="project-card">
           <h3>Robotics Software Internship – Zebu Intelligent Systems</h3>
           <p class="project-desc">KF, FSM, Visual SLAM, SfM, ORB/SIFT/SURF, deployment on Jetson Orin NX & Raspberry Pi 5.</p>
 
-          <p class="project-desc">ORB-SLAM demo:</p>
+          <p class="project-desc">Visual-SLAM demo:</p>
           <div class="video-wrap">
             <div class="yt-embed">
               <iframe src="https://www.youtube.com/embed/vFrbPghcAWo" frameborder="0" allowfullscreen></iframe>
@@ -215,6 +216,13 @@
               <iframe src="https://www.youtube.com/embed/70nkUwAZE_U" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
+        </article>
+
+        <!-- Hybrid VTOL -->
+        <article class="project-card">
+          <h3>Hybrid VTOL – Design & Fabrication (e-Yantra, IITB Summer Intern 2023)</h3>
+          <img src="assets/images/VTOL.jpg" class="project-thumb">
+          <p class="project-desc">Hybrid VTOL structural design, aerodynamics, CAD, CFD & component integration.</p>
         </article>
 
       </div>
