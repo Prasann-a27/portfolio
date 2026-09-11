@@ -95,6 +95,96 @@
       display: block;
     }
 
+    /* FEATURED SECTION — current work */
+    .featured-section { margin-bottom: 46px; }
+
+    .featured-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .featured-heading h2 { margin: 0; }
+
+    .badge-current {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #04121c;
+      background: linear-gradient(135deg, var(--accent), #6be0ff);
+      border-radius: 20px;
+    }
+
+    .featured-card {
+      background: linear-gradient(180deg, #17222b, rgba(20,28,34,0.95));
+      padding: 26px;
+      border-radius: 16px;
+      border: 1px solid #23414f;
+      box-shadow: 0 0 0 1px rgba(0,170,255,0.08), 0 10px 30px rgba(0,0,0,0.65);
+    }
+
+    .featured-card h3 {
+      margin: 0 0 8px;
+      color: #9fd8ff;
+      font-size: 1.3rem;
+    }
+
+    .featured-card .project-desc { font-size: 1rem; margin-bottom: 22px; }
+
+    .subhead {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 4px;
+    }
+    .subhead-note { color: var(--muted); font-size: 0.85rem; margin: 0 0 14px; }
+
+    /* indoor: 3 small demos in a row */
+    .indoor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .indoor-item .yt-embed { border-radius: 8px; }
+    .indoor-item p {
+      color: #cfcfcf;
+      font-size: 0.82rem;
+      text-align: center;
+      margin: 8px 0 0;
+    }
+
+    /* outdoor: video + its alignment plot side by side */
+    .outdoor-pair {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .outdoor-pair p.outdoor-label {
+      color: #cfcfcf;
+      font-size: 0.9rem;
+      margin: 0 0 8px;
+      font-weight: 500;
+    }
+    .plot-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #2a3e48;
+      background: #10171b;
+    }
+
+    @media (max-width: 760px) {
+      .indoor-grid { grid-template-columns: 1fr; }
+      .outdoor-pair { grid-template-columns: 1fr; }
+    }
+
     .resume-row {
       display: flex;
       gap: 12px;
@@ -126,6 +216,72 @@
   </header>
 
   <main class="container">
+
+    <!-- Featured: Current Work -->
+    <section id="current-work" class="featured-section">
+      <div class="featured-heading">
+        <h2>Current Work</h2>
+        <span class="badge-current">Current</span>
+      </div>
+
+      <article class="featured-card">
+        <h3>GNSS-Denied UAV Localization — VTOL Aviation India Pvt. Ltd.</h3>
+        <p class="project-desc">Visual and visual-inertial localization for UAVs operating without GPS. Evaluated multiple state-of-the-art SLAM/VIO pipelines on indoor camera-IMU data, then validated the selected approach outdoors — ORB-SLAM3 in mono-only mode achieved a 15&nbsp;m mean error against ground truth, tested across two distinct outdoor trajectories.</p>
+
+        <p class="subhead">Indoor Algorithm Evaluation</p>
+        <p class="subhead-note">Custom camera-IMU setup, compared across three pipelines</p>
+        <div class="indoor-grid">
+          <div class="indoor-item">
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/0TyQxRdNqi8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>ORB-SLAM3 (mono-IMU)</p>
+          </div>
+          <div class="indoor-item">
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/jPocKNIrtRo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>OKVIS2-X (mono-IMU)</p>
+          </div>
+          <div class="indoor-item">
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/QstR4T_H7is" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>DM-VIO (mono-only)</p>
+          </div>
+        </div>
+
+        <p class="subhead">Outdoor Validation</p>
+        <p class="subhead-note">ORB-SLAM3, mono-only, downward-facing camera on VTOL — 15&nbsp;m mean error vs. ground truth (Sim(3) Umeyama alignment)</p>
+
+        <div class="outdoor-pair">
+          <div>
+            <p class="outdoor-label">Straight-line trajectory with turns</p>
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/droMRFbZdfM" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div>
+            <p class="outdoor-label">Trajectory alignment (RPE vs. ground truth)</p>
+            <img src="assets/images/rpe_straight_traj.png" class="plot-img" alt="Straight-line trajectory alignment plot">
+          </div>
+        </div>
+
+        <div class="outdoor-pair">
+          <div>
+            <p class="outdoor-label">Circular trajectory — 2 laps + return-to-launch</p>
+            <div class="yt-embed">
+              <iframe src="https://www.youtube.com/embed/SF1q_CTQGEU" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div>
+            <p class="outdoor-label">Trajectory alignment (RPE vs. ground truth)</p>
+            <img src="assets/images/rpe_circular_traj.png" class="plot-img" alt="Circular trajectory alignment plot">
+          </div>
+        </div>
+      </article>
+    </section>
+
     <section id="projects">
       <h2>Projects</h2>
 
@@ -236,7 +392,7 @@
     <section id="resume" style="margin-top:34px">
       <h2>Resume</h2>
       <div class="resume-row">
-        <a href="assets/resume/resume.pdf" class="resume-button" download>Download Resume (PDF)</a>
+        <a href="assets/resume/Prasanna Gebise 9-9-2026.pdf" class="resume-button" download>Download Resume (PDF)</a>
         <!-- <span class="note"></span> -->
       </div>
     </section>
